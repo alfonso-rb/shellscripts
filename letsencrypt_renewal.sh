@@ -8,24 +8,25 @@
 #####################################
 
 
-# https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-lets-encrypt-certificates-with-lamp
-
 # To automatically try and renew the certificates
-
-# Get certbot-auto
-
+#
+# Depends on certbot-auto
+#
 # wget https://dl.eff.org/certbot-auto
-#sudo mv certbot-auto /usr/local/bin/certbot-auto
-#sudo chown root /usr/local/bin/certbot-auto
-#sudo chmod 0755 /usr/local/bin/certbot-auto
-#/usr/local/bin/certbot-auto --help
-
+# sudo mv certbot-auto /usr/local/bin/certbot-auto
+# sudo chown root /usr/local/bin/certbot-auto
+# sudo chmod 0755 /usr/local/bin/certbot-auto
+# /usr/local/bin/certbot-auto --help
+#
 # Script renews your pre-existing LetsEncrypt wildcard (dns-01) based certs automatically.
 # Add it to your cron.daily or other method. It has a 15 minute sleep, so if adding it to
 # cron.daily, place it last by renaming it or symlinking it (i.e. zzzletsencrypt_renewal.sh)
 # This is so it does not delay the execution of other scripts in cron.daily.
-# USAGE: letsencrypt_renewal.sh <domain_name>
+#
+# Assumes you already ran the letsencrypt process, similar to this:
+# https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-lets-encrypt-certificates-with-lamp
 
+# USAGE: letsencrypt_renewal.sh <domain_name>
 
 domain=$1
 combined_cert="/etc/haproxy/certs/${domain}.pem"
