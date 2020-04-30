@@ -20,3 +20,6 @@ with this program. If not, see http://www.gnu.org/licenses/.
 
 History:
 20141220 hammerar, initial version
+20200430 alfonsorb, Replaced static LVM variable with a parameter input.
+
+Dependencies: Requires "bc" installed to work.
