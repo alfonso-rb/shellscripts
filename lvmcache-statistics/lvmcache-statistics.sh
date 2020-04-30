@@ -94,13 +94,19 @@ INDEX=$((INDEX+1))
 NrPolicyArgs="${RESULTS[${INDEX}]}"
 PolicyArgs=""
 
-if [ ${NrPolicyArgs} -ne 0 ]; then
+# Regular expression for Integer
+re='^[0-9]+$'
 
-  for ITEM in $(seq $((INDEX+1)) $((2*NrPolicyArgs+INDEX)) ); do
-     PolicyArgs="${PolicyArgs}${RESULTS[${ITEM}]} "
-  done
+# Check if the variable is an integer, then run the nested if.
+if [[ ${NrPolicyArgs} =~ $re ]]; then
+  if [ ${NrPolicyArgs} -ne 0 ]; then
 
-  INDEX=$((INDEX+2*NrPolicyArgs))
+    for ITEM in $(seq $((INDEX+1)) $((2*NrPolicyArgs+INDEX)) ); do
+       PolicyArgs="${PolicyArgs}${RESULTS[${ITEM}]} "
+    done
+
+    INDEX=$((INDEX+2*NrPolicyArgs))
+  fi
 fi
 
 ##################################################################
