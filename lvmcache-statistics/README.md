@@ -23,3 +23,7 @@ History:
 20200430 alfonsorb, Replaced static LVM variable with a parameter input.
 
 Dependencies: Requires "bc" installed to work.
+
+Todo:
+fix this error: ./lvmcache-statistics.sh: line 97: [: -: integer expression expected
+
