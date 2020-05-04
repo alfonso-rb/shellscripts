@@ -1,0 +1,1 @@
+(Get-WsusServer).GetSubscription().StartSynchronization() | Out-File D:\Scripts\SCHDTASK-SyncWSUS.log

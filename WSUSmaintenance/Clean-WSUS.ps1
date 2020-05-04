@@ -1,0 +1,1 @@
+Invoke-WsusServerCleanup -CleanupObsoleteUpdates -CleanupObsoleteComputers -CleanupUnneededContentFiles -CompressUpdates -DeclineExpiredUpdates -DeclineSupersededUpdates | Out-File D:\Scripts\SCHDTASK-CleanWSUS.log
